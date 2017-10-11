@@ -1,7 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # sudo pip install paho-mqtt; sudo pip install git+https://github.com/bshillingford/wifi-locate
 
-from radiocells import locate, linux_scan
+import radiocells
 import time, sys
 
 min_aps=3
@@ -16,8 +16,8 @@ def append_message(messages, topic, payload):
   changed=True
 
 
-#print linux_scan(device="wlp4s0")
-#sys.exit(1)
+print (radiocells.locate(device="wlp4s0", max_aps=3))
+sys.exit(1)
 
 accuracy, latlng = locate(linux_scan(device="wlp0s20u1u4"),min_aps)
 if verbose: print(accuracy, latlng)  # e.g. 25, (50.1234567, -1.234567)
