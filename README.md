@@ -1,9 +1,19 @@
-# locate-radiocells
-Get position based on WLANs in proximity and radiocells.org database
+# locate-radiocells - Network Geolocation Services
 
-https://radiocells.org/geolocation
+Get position based on WLANs in proximity and radiocells.org database.
 
-Sample JSON request:
-{"wifiAccessPoints":[{"macAddress":"12-34-56-78-91-00","signalStrength":-57},{"macAddress":"98-76-54-33-22-11","signalStrength":-87}]}
+This is a Python 3 implementation of a client for https://radiocells.org/geolocation
 
-Using: https://github.com/rockymeza/wifi/
+## Dependencies
+* https://github.com/rockymeza/wifi/ - install: sudo pip3 install wifi
+
+Must run as root to get access to scanning.
+
+## Usage
+
+Example script:
+```
+$ sudo ./locate-wifi.py
+30 (59.937849051597226, 10.613390430215777)
+```
+

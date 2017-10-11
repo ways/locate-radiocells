@@ -22,14 +22,17 @@ print(result)
 
 """
 
-import requests
-import json
-import sys
-from wifi import Cell, Scheme
+import requests # for web request
+import json     # only used in debugging
+import sys      # only used in debugging
+import time     # for timing
+from wifi import Cell, Scheme # for wifi scanning
 
+system_version = '0.1'
+system_name = 'radiocells.py'
 apiurl = 'https://radiocells.org/backend/geolocate'
 #apiurl = 'http://localhost:10000'
-verbose = True
+verbose = False
 
 def locate(device='wlan0', min_aps=1, max_aps=0):
     """
@@ -38,6 +41,7 @@ def locate(device='wlan0', min_aps=1, max_aps=0):
 
     num = 0
     j = '{"wifiAccessPoints":['
+    start = time.time()
 
     if verbose: print ("scan_result of", device)
 
@@ -55,19 +59,29 @@ def locate(device='wlan0', min_aps=1, max_aps=0):
 
     j += ']}'
 
-    if verbose: print(json.dumps(j, indent=4))
+    if verbose:
+        print (json.dumps(j, indent=4))
+        print ("Scan done in: %s mseconds" % (time.time()-start))
 
     if (0 < num and num >= min_aps):
+        start=time.time()
         headers = {'Content-type': 'application/json', 'Accept': 'application/json'}
         response = requests.post(apiurl, headers=headers, data=(j))
 
-        if verbose: print(response)
-        if verbose: print(response.json())
+        if verbose:
+            print(response)
+            print(response.json())
+            print ("Loopup done in: %s mseconds" % (time.time()-start))
 
-        sys.exit(1)
+        # Decode result: {'source': 'wifis', 'measurements': 504, 'location': {'lat': 59.93795362593, 'lng': 10.613401290900999}, 'accuracy': 30}
+        result = response.json()
 
-        return res['accuracy'], \
-            (res['location']['lat'], res['location']['lng'])
+        if 'none' == result['source']:
+            if verbose: "Empty result returned."
+            return False, (False, False)
+
+        return result['accuracy'], \
+            (result['location']['lat'], result['location']['lng'])
     else:
         return False, (False, False)
 
