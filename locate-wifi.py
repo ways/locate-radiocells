@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
 
 import radiocells
-import time, sys
+import sys
 
-min_aps=3
 verbose=True
-
-# Functions
 
 accuracy, latlng = radiocells.locate(device="wlp4s0", min_aps=3)
 
