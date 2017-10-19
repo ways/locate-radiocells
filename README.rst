@@ -38,5 +38,5 @@ $ sudo ./locate-wifi.py wlan0
 Compatibility
 -------------
 
-Python 2 and 3, 3 is preferred. Only tested on Linux (Ubuntu, Fedora, Arch).
+Python 2 and 3. Only tested on Linux (Ubuntu, Fedora, Arch).
 
