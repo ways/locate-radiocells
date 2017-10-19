@@ -20,13 +20,13 @@ system_version = '0.2'
 system_name = 'radiocells.py'
 apiurl = 'https://radiocells.org/backend/geolocate'
 verbose = False
-hiddenaps = True
+hiddenaps = True # Include hidden APs
 
 if verbose:
     import json     # only used in debugging
     import sys      # only used in debugging
 
-def locate(device='wlan0', min_aps=1, max_aps=0):
+def locate(device='wlan0', min_aps=1, max_aps=0, hidden=hiddenaps):
     """
     Min_aps = minimum visible Access Points before a location is looked up. 0 = no limit.
     Max_aps = only send the first x APs to api. 0 = no limit.
@@ -69,7 +69,7 @@ def locate(device='wlan0', min_aps=1, max_aps=0):
             print(response.json())
             print ("Loopup done in: %s seconds" % (time.time()-start))
 
-        # Decode result: {'source': 'wifis', 'measurements': 504, 'location': {'lat': 59.93795362593, 'lng': 10.613401290900999}, 'accuracy': 30}
+        # Decode result: {'source': 'wifis', 'measurements': 504, 'location': {'lat': 59.12345, 'lng': 10.12345}, 'accuracy': 30}
         result = response.json()
 
         if 'none' == result['source']:
