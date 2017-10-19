@@ -31,7 +31,7 @@ setup(
     author='Lars Falk-Petersen',
     author_email='dev@falkp.no',
 
-    license='GPL',
+    license='AGPLv3+',
 
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
@@ -45,7 +45,7 @@ setup(
         'Intended Audience :: Developers',
 
         # Pick your license as you wish (should match "license" above)
-        'License :: OSI Approved :: GPL License',
+        'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)',
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
