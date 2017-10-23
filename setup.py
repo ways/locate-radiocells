@@ -55,6 +55,9 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        "Topic :: System :: Networking",
+        "Operating System :: POSIX :: Linux",
+        "Environment :: Console",
     ],
 
     # What does your project relate to?
