@@ -11,6 +11,7 @@ Installation
 ------------
 
 .. code:: bash
+
   $ pip install radiocells
 
 Dependencies (handled by pip)
@@ -27,12 +28,14 @@ Must run as root to get access to scanning.
 Example use:
 
 .. code:: python
-  import radiocells
-  accuracy, latlng = radiocells.locate(device='wlan0')
+
+    import radiocells
+    accuracy, latlng = radiocells.locate(device='wlan0')
 
 Example script included in examples/:
 
 .. code:: bash
+
   $ sudo ./locate-wifi.py wlan0
   30 (59.12345, 10.12345)
 
