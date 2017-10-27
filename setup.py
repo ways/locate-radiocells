@@ -20,7 +20,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 setup(
     name='radiocells',
 
-    version='0.2.8',
+    version='0.2.9',
 
     description='Get position based on wifi APs in proximity and radiocells.org database.',
     long_description=long_description,
