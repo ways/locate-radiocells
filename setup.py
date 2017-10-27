@@ -20,7 +20,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 setup(
     name='radiocells',
 
-    version='0.2.7',
+    version='0.2.8',
 
     description='Get position based on wifi APs in proximity and radiocells.org database.',
     long_description=long_description,
@@ -75,7 +75,7 @@ setup(
     # your project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=['wifi', 'requests'],
+    install_requires=['wifi', 'requests', 'setuptools'],
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). You can install these using the following syntax,
