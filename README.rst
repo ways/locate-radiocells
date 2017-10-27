@@ -32,7 +32,7 @@ Example use:
     import radiocells
     accuracy, latlng = radiocells.locate(device='wlan0')
 
-Example script included in examples/:
+Example script included in examples/, (prints out accuracy in meters, and coordinates):
 
 .. code:: bash
 
