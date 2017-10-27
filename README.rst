@@ -7,14 +7,17 @@ This is a Python client for https://radiocells.org/geolocation
 
 ----
 
-Dependencies
+Installation
 ------------
+
+.. highlight:: bash
+   $ pip install radiocells
+
+Dependencies (handled by pip)
+-----------------------------
 
 * https://github.com/rockymeza/wifi/
 * https://pypi.python.org/pypi/requests/
-
-Install: `pip install -r requirements.txt`
-
 
 Usage
 -----
@@ -23,17 +26,15 @@ Must run as root to get access to scanning.
 
 Example use:
 
-```python
-import radiocells
-accuracy, latlng = radiocells.locate(device='wlan0')
-```
+.. highlight:: python
+   import radiocells
+   accuracy, latlng = radiocells.locate(device='wlan0')
 
 Example script included in examples/:
 
-```bash
-$ sudo ./locate-wifi.py wlan0
-30 (59.12345, 10.12345)
-```
+.. highlight:: bash
+   $ sudo ./locate-wifi.py wlan0
+   30 (59.12345, 10.12345)
 
 Compatibility
 -------------
