@@ -68,7 +68,10 @@ def locate(device='wlan0', min_aps=1, max_aps=0, hidden=hiddenaps):
         # Decode result: {'source': 'wifis', 'measurements': 504, 'location': {'lat': 59.12345, 'lng': 10.12345}, 'accuracy': 30}
         result = response.json()
 
-        if 'none' == result['source']:
+        try:
+          if result['location']:
+            pass
+        except KeyError:
             if verbose: "Empty result returned."
             return False, (False, False)
 
