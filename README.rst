@@ -6,6 +6,8 @@ https://radiocells.org/geolocation
 
 Project home: https://github.com/ways/locate-radiocells
 
+Will be superseeded by https://github.com/ways/wifindme
+
 ----
 
 Installation
